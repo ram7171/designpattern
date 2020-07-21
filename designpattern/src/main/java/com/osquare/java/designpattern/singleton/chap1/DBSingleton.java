@@ -13,7 +13,7 @@ public class DBSingleton {
     //to control the creation of object through reflection
     private DBSingleton() {
         try {
-            DriverManager.registerDriver(null/*new org.apache.derby.jdbc.EmbeddedDriver()*/);
+            DriverManager.registerDriver(new org.apache.derby.jdbc.EmbeddedDriver());
         } catch(SQLException e) {
             e.printStackTrace();
         }
